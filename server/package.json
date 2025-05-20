@@ -8,8 +8,12 @@
     "start": "node src/index.js"
   },
   "type": "module",
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "note application",
+    "notes app",
+    "note"
+  ],
+  "author": "Jaenudin Firdaus",
   "license": "ISC",
   "packageManager": "pnpm@10.11.0",
   "dependencies": {
