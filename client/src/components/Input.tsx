@@ -1,9 +1,13 @@
 type Props = {
   type: string;
   label: string;
+  value: string;
+  onChange: (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
 };
 
-const Input = ({ type, label }: Props) => {
+const Input = ({ type, label, value, onChange }: Props) => {
   const inputId = label.toLowerCase().replace(/\s+/g, "-");
 
   const baseClasses =
@@ -18,9 +22,15 @@ const Input = ({ type, label }: Props) => {
   return (
     <div className="relative w-full">
       {type === "text" ? (
-        <input type="text" {...sharedProps} />
+        <input type="text" {...sharedProps} value={value} onChange={onChange} />
       ) : (
-        <textarea {...sharedProps} rows={4} className={`${baseClasses} resize-none`} />
+        <textarea
+          {...sharedProps}
+          rows={4}
+          className={`${baseClasses} resize-none`}
+          value={value}
+          onChange={onChange}
+        />
       )}
 
       <label
